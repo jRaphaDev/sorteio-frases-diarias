@@ -10,16 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var frase: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func fraseNova(_ sender: Any) {
+        var frases: [String] = []
+        let numero = arc4random_uniform(3)
+
+        frases.append("testando primeira frase")
+        frases.append("testando segunda frase")
+        frases.append("testando terceira frase")
+        
+        frase.text = frases[Int( numero )]
+    }
 
 }
 
